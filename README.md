@@ -1,10 +1,12 @@
 # traduki
 
-A Clojure library designed to ... well, that part is up to you.
+Inject translations into Enlive elements using HTML data tags
+
+[![Clojars Project](http://clojars.org/traduki/latest-version.svg)](http://clojars.org/traduki)
 
 ## Usage
 
-FIXME
+TODO
 
 ## License
 

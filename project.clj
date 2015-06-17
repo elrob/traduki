@@ -1,6 +1,6 @@
 (defproject traduki "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
+  :description "Inject translations into Enlive elements using html data tags"
+  :url "https://github.com/elrob/traduki"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.6.0"]
