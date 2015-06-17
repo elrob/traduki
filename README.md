@@ -5,7 +5,7 @@
 Inject static translations into Enlive elements using HTML data tags
 
 Using [Enlive](https://github.com/cgrand/enlive), you can transform HTML templates in clojure.
-*Traduki* enables you to include data tags in your HTML templates which map to translation keys.
+**traduki** enables you to include data tags in your HTML templates which map to translation keys.
 The `translate` function injects translations into Enlive nodes.
 
 ## Usage
