@@ -1,6 +1,6 @@
 # traduki
 
-Inject translations into Enlive elements using HTML data tags
+Inject static translations into Enlive elements using HTML data tags
 
 [![Clojars Project](http://clojars.org/traduki/latest-version.svg)](http://clojars.org/traduki)
 
