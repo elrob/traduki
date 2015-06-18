@@ -1,8 +1,8 @@
 # traduki 
 
-    Build: [![Build Status](https://snap-ci.com/elrob/traduki/branch/master/build_image)](https://snap-ci.com/elrob/traduki/branch/master)
+Build: [![Build Status](https://snap-ci.com/elrob/traduki/branch/master/build_image)](https://snap-ci.com/elrob/traduki/branch/master)
 
-    Deploy: [![Clojars Project](http://clojars.org/traduki/latest-version.svg)](http://clojars.org/traduki)
+Deploy: [![Clojars Project](http://clojars.org/traduki/latest-version.svg)](http://clojars.org/traduki)
 
 Inject static translations into Enlive elements using HTML data tags
 
