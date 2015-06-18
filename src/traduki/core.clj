@@ -1,8 +1,9 @@
 (ns traduki.core
-  (:require [net.cgrand.enlive-html :as enlv]))
+  (:require [clojure.string :as string]
+            [net.cgrand.enlive-html :as enlv]))
 
-(defn- apply-translation [translation-string node translator]
-  (let [[translation-type-string translation-key-string] (clojure.string/split translation-string #":")
+(defn- apply-translation [translator node translation-string]
+  (let [[translation-type-string translation-key-string] (string/split translation-string #":")
         translation-type (keyword translation-type-string)
         translation-key (keyword translation-key-string)
         translation (translator translation-key)]
@@ -18,15 +19,10 @@
 
       :else node)))
 
-(defn- apply-translations [[translation-string & more] node translator]
-  (let [translated-node (apply-translation translation-string node translator)]
-    (if more
-      (recur more translated-node translator)
-      translated-node)))
-
 (defn- translate-node [node translator]
-  (let [translation-strings (clojure.string/split (get-in node [:attrs :data-l8n]) #"\s+")]
-    (apply-translations translation-strings node translator)))
+  (let [data-l8n-value (get-in node [:attrs :data-l8n])
+        translation-strings (string/split data-l8n-value #"\s+")]
+    (reduce #(apply-translation translator %1 %2) node translation-strings)))
 
 (defn translate [translator nodes]
   (enlv/at nodes
