@@ -7,7 +7,11 @@
         translation-type (keyword translation-type-string)
         translation-key (keyword translation-key-string)
         translation (translator translation-key)]
+    
     (cond
+      (nil? translation)
+      node
+      
       (= :content translation-type)
       (assoc node :content (list translation))
 
