@@ -74,6 +74,17 @@
             first
             (enlv/text)) => "TRANSLATED_CONTENT"))
 
+(tabular
+ (fact "when translation is not provided, node is left unaltered"
+       (against-background
+        (mock-translator anything) => nil)
+       (let [enlive-element (html-string->enlive ?html-fragment)]
+         (translate mock-translator enlive-element) => enlive-element))
+ ?html-fragment
+ "<p data-l8n=\"content:translation-key\">old-content</p>"
+ "<p data-l8n=\"attr/title:translation-key\">old-content</p>"
+ "<p data-l8n=\"html:translation-key\">old-content</p>")
+
 (def translator
   (fn [translation-key]
     (case translation-key
