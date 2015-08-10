@@ -1,4 +1,4 @@
-(defproject traduki "0.1.1-SNAPSHOT"
+(defproject traduki "0.1.2-SNAPSHOT"
   :description "Inject static translations into Enlive elements using HTML data tags"
   :url "https://github.com/elrob/traduki"
   :license {:name "Eclipse Public License"
