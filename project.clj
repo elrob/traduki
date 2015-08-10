@@ -6,4 +6,6 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [midje "1.6.3"]
                  [enlive "1.1.5"]]
-  :plugins [[lein-midje "3.1.3"]])
+  :plugins [[lein-midje "3.1.3"]]
+  :deploy-repositories [["clojars" {:username :env
+                                    :password :env}]])
