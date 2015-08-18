@@ -4,6 +4,10 @@
             [traduki.core :refer :all]))
 
 
+(fact "translate requires a translator"
+      (translate nil ...enlive-element...) => (throws IllegalArgumentException
+                                                      "translator function cannot be nil"))
+
 (def mock-translator :mock-translations-function)
 
 (defn html-string->enlive [html-string]

@@ -7,11 +7,11 @@
         translation-type (keyword translation-type-string)
         translation-key (keyword translation-key-string)
         translation (translator translation-key)]
-    
+
     (cond
       (nil? translation)
       node
-      
+
       (= :content translation-type)
       (assoc node :content (list translation))
 
@@ -29,5 +29,6 @@
     (reduce #(apply-translation translator %1 %2) node translation-strings)))
 
 (defn translate [translator nodes]
+  (when-not translator (throw (IllegalArgumentException. "translator function cannot be nil")))
   (enlv/at nodes
            [(enlv/attr? :data-l8n)] #(translate-node % translator)))
